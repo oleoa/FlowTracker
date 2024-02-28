@@ -31,7 +31,7 @@
       <x-errors/>
 
       <!-- Sign up -->
-      <span class="text-white">Have an account? <a href="{{route('login')}}" class="hover:text-white/0 hover:bg-gradient-to-br hover:from-primary-200 hover:to-primary-300 bg-clip-text">Sign in</a></span>
+      <span class="text-white flex gap-1">Have an account? <a href="{{route('login')}}" class="hover:text-white/0 hover:bg-gradient-to-br hover:from-primary-200 hover:to-primary-300 bg-clip-text">Sign in</a></span>
 
     </form>
 
