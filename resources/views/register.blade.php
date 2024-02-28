@@ -13,16 +13,36 @@
       <h1 class="py-4 text-white">Register</h1>
 
       <!-- Name -->
-      <input type="text" name="name" placeholder="Name" class="bg-white/0 border-2 border-white placeholder:text-white text-white">
+      <span class="w-full relative">
+        <input type="text" name="name" placeholder="Name" class="bg-white/0 border-2 border-white placeholder:text-white text-white">
+        <div class="absolute right-0 top-0 h-full px-4 flex items-center">
+          <i class="fa-solid fa-signature"></i>
+        </div>
+      </span>
 
       <!-- Email -->
-      <input type="email" name="email" placeholder="Email" class="bg-white/0 border-2 border-white placeholder:text-white text-white">
+      <span class="w-full relative">
+        <input type="email" name="email" placeholder="Email" class="bg-white/0 border-2 border-white placeholder:text-white text-white">
+        <div class="absolute right-0 top-0 h-full px-4 flex items-center">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+      </span>
 
       <!-- Password -->
-      <input type="password" name="password" placeholder="Password" class="bg-white/0 border-2 border-white placeholder:text-white text-white">
+      <span class="w-full relative">
+        <input type="password" name="password" placeholder="Password" class="bg-white/0 border-2 border-white placeholder:text-white text-white">
+        <div class="absolute right-0 top-0 h-full px-4 flex items-center">
+          <i class="fa-solid fa-key"></i>
+        </div>
+      </span>
 
       <!-- Confirm Password -->
-      <input type="password" name="password_confirmation" placeholder="Confirm Password" class="bg-white/0 border-2 border-white placeholder:text-white text-white">
+      <span class="w-full relative">
+        <input type="password" name="password_confirmation" placeholder="Confirm Password" class="bg-white/0 border-2 border-white placeholder:text-white text-white">
+        <div class="absolute right-0 top-0 h-full px-4 flex items-center">
+          <i class="fa-solid fa-lock"></i>
+        </div>
+      </span>
 
       <!-- Submit -->
       <input type="submit" value="Register" class="bg-white text-black font-bold hover:bg-gradient-to-br hover:from-primary-200 hover:to-primary-300 hover:text-white">

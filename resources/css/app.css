@@ -19,4 +19,8 @@
   a {
     @apply cursor-pointer hover:text-primary-100 flex;
   }
+
+  i {
+    @apply text-white text-2xl;
+  }
 }

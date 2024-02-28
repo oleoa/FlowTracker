@@ -13,10 +13,20 @@
       <h1 class="py-4 text-white">Login</h1>
 
       <!-- Email -->
-      <input type="email" name="email" placeholder="Email" class="bg-white/0 border-2 border-white placeholder:text-white text-white">
+      <span class="w-full relative">
+        <input type="email" name="email" placeholder="Email" class="bg-white/0 border-2 border-white placeholder:text-white text-white">
+        <div class="absolute right-0 top-0 h-full px-4 flex items-center">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+      </span>
 
       <!-- Password -->
-      <input type="password" name="password" placeholder="Password" class="bg-white/0 border-2 border-white placeholder:text-white text-white">
+      <span class="w-full relative">
+        <input type="password" name="password" placeholder="Password" class="bg-white/0 border-2 border-white placeholder:text-white text-white">
+        <div class="absolute right-0 top-0 h-full px-4 flex items-center">
+          <i class="fa-solid fa-key"></i>
+        </div>
+      </span>
 
       <!-- Remember me and Forgot Password -->
       <div class="grid grid-cols-2 w-full">
