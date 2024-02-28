@@ -74,9 +74,9 @@
       <label for="name">Name</label>
       <input type="text" autocomplete="name" name="name" id="name" class="bg-secondary-200 text-white" placeholder="Mc Donalds">
   
-      <!-- Amout -->
-      <label for="amout">Amout</label>
-      <input type="number" name="amout" id="amout" class="bg-secondary-200 text-white" placeholder="8.75 or 8,75">
+      <!-- amount -->
+      <label for="amount">Amount</label>
+      <input type="number" name="amount" step="any" id="amount" class="bg-secondary-200 text-white" placeholder="8.75 or 8,75">
   
       <!-- Category -->
       <label for="category">Category</label>
@@ -118,6 +118,9 @@
   
       <!-- Submit -->
       <input type="submit" class="bg-green-500 text-white rounded px-4 hover:bg-gradient-to-br hover:from-primary-200 hover:to-primary-300" value="Add">
+
+      <!-- Errors -->
+      <x-errors/>
   
     </form>
 
