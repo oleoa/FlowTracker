@@ -12,9 +12,11 @@
 
   </head>
 
-  <body class="">
+  <body class="grid grid-rows-1">
+
+    <x-sidebar/>
     
-    <div class="">
+    <div class="row-span-1 pl-64">
 
       @yield('content')
 

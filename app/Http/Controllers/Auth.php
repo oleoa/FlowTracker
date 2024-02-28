@@ -57,6 +57,12 @@ class Auth extends Controller
 
   public function signout(Request $request)
   {
+    AuthSupport::logout();
 
+    $request->session()->invalidate();
+
+    $request->session()->regenerateToken();
+
+    return redirect()->route('login');
   }
 }

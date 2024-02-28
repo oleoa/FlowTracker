@@ -13,19 +13,19 @@
       <h1 class="py-4">Register</h1>
 
       <!-- Name -->
-      <input type="text" name="name" placeholder="Name" class="bg-white/0 border-2 border-white placeholder:text-white text-white focus:outline-none">
+      <input type="text" name="name" placeholder="Name" class="bg-white/0 border-2 border-white placeholder:text-white text-white">
 
       <!-- Email -->
-      <input type="email" name="email" placeholder="Email" class="bg-white/0 border-2 border-white placeholder:text-white text-white focus:outline-none">
+      <input type="email" name="email" placeholder="Email" class="bg-white/0 border-2 border-white placeholder:text-white text-white">
 
       <!-- Password -->
-      <input type="password" name="password" placeholder="Password" class="bg-white/0 border-2 border-white placeholder:text-white text-white focus:outline-none">
+      <input type="password" name="password" placeholder="Password" class="bg-white/0 border-2 border-white placeholder:text-white text-white">
 
       <!-- Confirm Password -->
-      <input type="password" name="password_confirmation" placeholder="Confirm Password" class="bg-white/0 border-2 border-white placeholder:text-white text-white focus:outline-none">
+      <input type="password" name="password_confirmation" placeholder="Confirm Password" class="bg-white/0 border-2 border-white placeholder:text-white text-white">
 
       <!-- Submit -->
-      <input type="submit" value="Register" class="bg-white font-bold hover:bg-gradient-to-br hover:from-primary-200 hover:to-primary-300 hover:text-white">
+      <input type="submit" value="Register" class="bg-white text-black font-bold hover:bg-gradient-to-br hover:from-primary-200 hover:to-primary-300 hover:text-white">
 
       <!-- Errors -->
       <x-errors/>
