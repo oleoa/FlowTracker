@@ -53,6 +53,7 @@ Cada user pode criar meta de quanto eles querem gastar mensalmente em geral, ou 
 ### Dashboard
 - O saldo Atual
 - Últimos movimentos
+- Quanto se recebe e quanto se gasta mensalmente
 
 ### Incomes
 ### Expenses
