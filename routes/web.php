@@ -31,5 +31,5 @@ Route::get('/register', [Auth::class, 'register'])->name('register');
 Route::name('sign.')->group(function () {
   Route::post('/login', [Auth::class, 'signin'])->name('in');
   Route::post('/register', [Auth::class, 'signup'])->name('up');
-  Route::get('/logout', [Auth::class, 'logout'])->name('out');
+  Route::get('/logout', [Auth::class, 'signout'])->name('out');
 });

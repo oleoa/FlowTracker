@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full">
 
   <head>
 
@@ -12,11 +12,11 @@
 
   </head>
 
-  <body class="grid grid-rows-1">
+  <body class="grid grid-rows-1 h-full text-white">
 
     <x-sidebar/>
     
-    <div class="row-span-1 pl-64">
+    <div class="row-span-1 pl-64 bg-secondary-100">
 
       @yield('content')
 

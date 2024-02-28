@@ -17,6 +17,6 @@
   }
 
   a {
-    @apply cursor-pointer hover:text-primary-100;
+    @apply cursor-pointer hover:text-primary-100 flex;
   }
 }
