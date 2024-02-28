@@ -11,4 +11,14 @@ class Dashboard extends Controller
   {
     return view('dashboard');
   }
+
+  public function incomes()
+  {
+    return view('incomes');
+  }
+
+  public function expenses()
+  {
+    return view('expenses');
+  }
 }

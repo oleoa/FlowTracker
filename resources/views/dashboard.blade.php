@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('title', 'Home')
+@php $current = 'dashboard'; @endphp
 @section('content')
 
   <main class="grid grid-cols-4 grid-rows-6 gap-4">

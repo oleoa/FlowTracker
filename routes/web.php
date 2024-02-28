@@ -34,4 +34,6 @@ Route::name('sign.')->group(function () {
 
 Route::middleware('auth')->group(function () {
   Route::get('/', [Dashboard::class, 'index'])->name('dashboard');
+  Route::get('/incomes', [Dashboard::class, 'incomes'])->name('incomes');
+  Route::get('/expenses', [Dashboard::class, 'expenses'])->name('expenses');
 });
