@@ -14,13 +14,13 @@
 
   </head>
 
-  <body class="grid grid-rows-1 h-full text-white">
+  <body class="h-full text-white">
 
     <x-navbar :current="$current"/>
 
     <x-sidebar :current="$current"/>
     
-    <div class="row-span-1 xl:pl-64 xl:pt-28 xl:pb-0 pb-20 xl:pr-4 bg-secondary-100">
+    <div class="xl:pl-64 xl:pt-28 xl:pb-0 pb-28 xl:pr-4 bg-secondary-100 min-h-full">
 
       @yield('content')
 

@@ -3,7 +3,7 @@
 @php $current = 'dashboard'; @endphp
 @section('content')
 
-  <main class="grid grid-cols-4 grid-rows-7 gap-4">
+  <main class="grid xl:grid-cols-4 xl:grid-rows-7 gap-4 xl:p-0 p-4">
 
     <!-- Amounts Row -->
     <div class="p-4 rounded bg-secondary-200 border-2 border-primary-100 font-bold">
@@ -31,7 +31,7 @@
     </div>
 
     <!-- Historic Column -->
-    <div class="row-span-7 text-white font-bold bg-gradient-to-br from-primary-200 to-primary-300 rounded">
+    <div class="xl:row-span-7 text-white font-bold bg-gradient-to-br from-primary-200 to-primary-300 rounded">
 
       <!-- Title -->
       <div class="flex gap-4 items-center justify-center border-white border-b-2 py-8">
@@ -68,11 +68,10 @@
 
       </div>
 
-
     </div>
 
     <!-- Graphic -->
-    <div class="col-span-3 row-span-6 bg-black rounded flex items-center justify-center">
+    <div class="xl:col-span-3 xl:row-span-6 bg-black rounded hidden xl:flex items-center justify-center">
 
       <i class="fa-solid fa-signal" style="font-size: 35rem;"></i>
 

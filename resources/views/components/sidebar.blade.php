@@ -11,19 +11,19 @@
         <span>Dashboard</span>
         <i class="fa-solid fa-chart-line"></i>
       </a>
+      <a href="{{route('expenses')}}" @class([
+        'p-4 w-full flex justify-between items-center text-xl hover:text-white hover:bg-gradient-to-br hover:from-primary-200 hover:to-primary-300 rounded',
+        'bg-gradient-to-br from-primary-100 to-primary-300' => $current == 'expenses'
+        ])>
+        <span>Expenses</span>
+        <i class="fa-solid fa-money-check-dollar"></i>
+      </a>
       <a href="{{route('incomes')}}" @class([
           'p-4 w-full flex justify-between items-center text-xl hover:text-white hover:bg-gradient-to-br hover:from-primary-200 hover:to-primary-300 rounded',
           'bg-gradient-to-br from-primary-100 to-primary-300' => $current == 'incomes'
         ])>
         <span>Incomes</span>
         <i class="fa-solid fa-sack-dollar"></i>
-      </a>
-      <a href="{{route('expenses')}}" @class([
-          'p-4 w-full flex justify-between items-center text-xl hover:text-white hover:bg-gradient-to-br hover:from-primary-200 hover:to-primary-300 rounded',
-          'bg-gradient-to-br from-primary-100 to-primary-300' => $current == 'expenses'
-        ])>
-        <span>Expenses</span>
-        <i class="fa-solid fa-money-check-dollar"></i>
       </a>
       <a href="{{route('dashboard')}}" @class([
           'p-4 w-full flex justify-between items-center text-xl hover:text-white hover:bg-gradient-to-br hover:from-primary-200 hover:to-primary-300 rounded',
