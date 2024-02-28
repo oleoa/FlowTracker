@@ -3,10 +3,10 @@
 @section('content')
 
   <!-- Image -->
-  <main class="w-full h-full flex flex-col items-center justify-center bg-center" style="background-image: url('/img/sign/login.jpg')">
+  <main class="w-full h-full overflow-hidden flex flex-col items-center justify-center bg-center p-4" style="background-image: url('/img/sign/login.jpg')">
 
     <!-- Login Blur Form -->
-    <form action="{{route('sign.in')}}" method="POST" class="rounded-xl flex flex-col items-center justify-start gap-6 backdrop-blur p-8 w-1/3 border-2 border-white">
+    <form action="{{route('sign.in')}}" method="POST" class="rounded-xl flex flex-col items-center justify-start gap-6 backdrop-blur p-8 xl:w-1/3 w-full border-2 border-white">
       @csrf
   
       <!-- Title -->

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full">
 
   <head>
 
@@ -12,7 +12,7 @@
 
   </head>
 
-  <body class="grid grid-rows-1 min-h-screen">
+  <body class="grid grid-rows-1 h-full">
     
     <div class="row-span-1">
 
