@@ -23,6 +23,9 @@ Route::middleware('auth')->group(function () {
 });
 
 // No Auth Routes
+Route::get('/colors', function () {
+  return view('colors');
+})->name('colors');
 Route::get('/login', [Auth::class, 'login'])->name('login');
 Route::get('/register', [Auth::class, 'register'])->name('register');
 Route::name('sign.')->group(function () {
