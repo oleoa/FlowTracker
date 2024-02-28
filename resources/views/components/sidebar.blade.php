@@ -1,11 +1,36 @@
-<aside class="xl:flex flex-col justify-between items-center hidden w-64 h-full fixed top-0 left-0 bg-secondary-200">
+<aside class="xl:flex hidden w-64 h-full fixed top-0 left-0 pt-28 z-10 p-4">
 
-  <!-- Top -->
-  <div></div>
+  <div class="flex flex-col justify-between items-center w-full h-full bg-secondary-200 rounded">
 
-  <!-- Bottom -->
-  <div class="w-full">
-    <a href="{{route('sign.out')}}" class="py-2 px-4 w-full bg-neutral-800">Logout</a>
+    <!-- Top -->
+    <div class="w-full flex flex-col justify-start gap-4 py-4">
+      <h2 class="text-center w-full">FlowTracker</h2>
+      <a href="{{route('dashboard')}}" @class([
+          'p-4 w-full flex justify-between items-center text-xl hover:text-white hover:bg-gradient-to-br hover:from-primary-200 hover:to-primary-300',
+          'bg-gradient-to-br from-primary-100 to-primary-300' => true
+        ])>
+        <span>Dashboard</span>
+        <i class="fa-solid fa-chart-line"></i>
+      </a>
+      <a href="{{route('dashboard')}}" @class([
+          'p-4 w-full flex justify-between items-center text-xl hover:text-white hover:bg-gradient-to-br hover:from-primary-200 hover:to-primary-300',
+          'bg-gradient-to-br from-primary-100 to-primary-300' => false
+        ])>
+        <span>Dashboard</span>
+        <i class="fa-solid fa-chart-line"></i>
+      </a>
+    </div>
+  
+    <!-- Bottom -->
+    <a href="{{route('sign.out')}}" @class([
+        'p-4 w-full flex justify-between items-center text-xl hover:text-white hover:bg-gradient-to-br hover:from-primary-200 hover:to-primary-300',
+        'bg-gradient-to-br from-primary-100 to-primary-300' => false
+      ])>
+      <span>Logout</span>
+      <i class="fa-solid fa-right-from-bracket"></i>
+    </a>
+
   </div>
+
 
 </aside>

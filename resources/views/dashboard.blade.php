@@ -4,7 +4,7 @@
 
   <main class="p-4">
 
-    <h1>Home</h1>
+    <h1>Dashboard</h1>
     <p>Welcome to our home page</p>
 
   </main>

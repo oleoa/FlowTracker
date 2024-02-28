@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
+    <script src="https://kit.fontawesome.com/cf64f43fc0.js" crossorigin="anonymous"></script>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <title>@yield('title')</title>
@@ -14,9 +16,11 @@
 
   <body class="grid grid-rows-1 h-full text-white">
 
+    <x-navbar/>
+
     <x-sidebar/>
     
-    <div class="row-span-1 pl-64 bg-secondary-100">
+    <div class="row-span-1 xl:pl-64 xl:pt-28 xl:pb-0 pb-20 bg-secondary-100">
 
       @yield('content')
 
