@@ -16,11 +16,15 @@ use App\Http\Controllers\Home;
 |
 */
 
-Route::get('/', [Home::class, 'index'])->name('home')->middleware('auth');
+// Auth Routes
+Route::middleware('auth')->group(function () {
+  Route::get('/', [Home::class, 'index'])->name('home');
+  Route::get('/logout', [Auth::class, 'logout'])->name('logout');
+});
 
+// No Auth Routes
 Route::get('/login', [Auth::class, 'login'])->name('login');
 Route::get('/register', [Auth::class, 'register'])->name('register');
-
 Route::name('sign.')->group(function () {
   Route::post('/login', [Auth::class, 'signin'])->name('in');
   Route::post('/register', [Auth::class, 'signup'])->name('up');

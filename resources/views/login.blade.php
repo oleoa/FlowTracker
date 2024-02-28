@@ -46,7 +46,7 @@
         <input type="submit" value="Login" class="bg-white font-bold hover:bg-gradient-to-br hover:from-primary-200 hover:to-primary-300 hover:text-white">
 
         <!-- Sign up -->
-        <span class="text-white">Don't have an account? <a href="{{route('sign.up')}}" class="hover:text-white/0 hover:bg-gradient-to-br hover:from-primary-200 hover:to-primary-300 bg-clip-text">Sign up</a></span>
+        <span class="text-white">Don't have an account? <a href="{{route('register')}}" class="hover:text-white/0 hover:bg-gradient-to-br hover:from-primary-200 hover:to-primary-300 bg-clip-text">Sign up</a></span>
 
       </form>
 
