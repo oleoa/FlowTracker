@@ -3,10 +3,10 @@
 @php $current = 'expenses'; @endphp
 @section('content')
 
-  <main class="flex xl:p-0 p-4 gap-4">
+  <main class="grid grid-cols-3 xl:p-0 p-4 gap-4">
 
     <!-- List and Totals -->
-    <div class="grid xl:grid-cols-4 gap-4 w-2/3 h-fit">
+    <div class="grid xl:grid-cols-4 gap-4 col-span-2 h-fit">
 
       <!-- Total -->
       <div class="p-4 rounded bg-secondary-200 border-primary-200 border-2 font-bold flex flex-col gap-2">
@@ -67,20 +67,20 @@
     </div>
 
     <!-- Add Expense -->
-    <form action="{{route('expense.add')}}" method="POST" class="flex flex-col gap-2 w-1/3">
+    <form action="{{route('expense.add')}}" method="POST" class="flex flex-col gap-2 gradient-red-purple p-4 rounded">
       @csrf
   
       <!-- Name -->
-      <label for="name">Name</label>
-      <input type="text" autocomplete="name" name="name" id="name" class="bg-secondary-200 text-white" placeholder="Mc Donalds">
+      <label for="name" class="font-black">Name</label>
+      <input type="text" autocomplete="name" name="name" id="name" class="bg-secondary-200 text-white placeholder:text-white" placeholder="Mc Donalds">
   
       <!-- amount -->
-      <label for="amount">Amount</label>
-      <input type="number" name="amount" step="any" id="amount" class="bg-secondary-200 text-white" placeholder="8.75 or 8,75">
+      <label for="amount" class="font-black">Amount</label>
+      <input type="number" name="amount" step="any" id="amount" class="bg-secondary-200 text-white placeholder:text-white" placeholder="8.75 or 8,75">
   
       <!-- Category -->
-      <label for="category">Category</label>
-      <select name="category" id="category" class="bg-secondary-200 text-white rounded px-4 border-r-8 border-secondary-200">
+      <label for="category" class="font-black">Category</label>
+      <select name="category" id="category" class="bg-secondary-200 rounded px-4 border-r-8 border-secondary-200">
         <option value="1">Food</option>
         <option value="2">Transport</option>
         <option value="3">Entertainment</option>
@@ -90,22 +90,22 @@
       </select>
   
       <!-- Date -->
-      <label for="date">Date</label>
-      <input type="date" id="date" name="date" class="bg-secondary-200 text-white rounded" value="{{date('Y-m-d')}}">
+      <label for="date" class="font-black">Date</label>
+      <input type="date" id="date" name="date" class="bg-secondary-200 rounded" value="{{date('Y-m-d')}}">
   
       <!-- Recurrent -->
-      <label for="recurrent">Recurrent?</label>
+      <label for="recurrent" class="font-black">Recurrent?</label>
       <select name="recurrent" id="recurrent" class="bg-secondary-200 text-white rounded px-4 border-r-8 border-secondary-200">
         <option value="false" selected>No</option>
         <option value="true">Yes</option>
       </select>
   
       <!-- End Date -->
-      <label for="end_date">End</label>
+      <label for="end_date" class="font-black">End</label>
       <input type="date" id="end_date" name="end_date" class="bg-secondary-200 text-white rounded" value="{{date('Y-m-d')}}">
   
       <!-- Frequency -->
-      <label for="frequency">Frequency</label>
+      <label for="frequency" class="font-black">Frequency</label>
       <select name="frequency" id="frequency" class="bg-secondary-200 text-white rounded px-4 border-r-8 border-secondary-200">
         <option value="day">Day</option>
         <option value="week">Week</option>
@@ -117,7 +117,7 @@
       </select>
   
       <!-- Submit -->
-      <input type="submit" class="bg-green-500 text-white rounded px-4 hover:bg-gradient-to-br hover:from-primary-200 hover:to-primary-300" value="Add">
+      <input type="submit" class="bg-green-500 text-white rounded px-4 hover:bg-green-400" value="Add">
 
       <!-- Errors -->
       <x-errors/>

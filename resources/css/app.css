@@ -50,3 +50,11 @@
     @apply text-white xl:text-2xl text-lg;
   }
 }
+
+.gradient-blue-purple {
+  @apply bg-gradient-to-r from-primary-100 to-primary-300;
+}
+
+.gradient-red-purple {
+  @apply text-white bg-gradient-to-r from-primary-200 to-primary-300;
+}

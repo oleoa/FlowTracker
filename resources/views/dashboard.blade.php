@@ -3,35 +3,44 @@
 @php $current = 'dashboard'; @endphp
 @section('content')
 
-  <main class="grid xl:grid-cols-4 xl:grid-rows-7 gap-4 xl:p-0 p-4">
+  <main class="grid xl:grid-cols-3 gap-4 xl:p-0 p-4">
 
-    <!-- Amounts Row -->
-    <div class="p-4 rounded bg-secondary-200 border-2 border-primary-100 font-bold flex flex-col gap-2">
-      <div class="flex gap-4">
-        <p>Current balance</p>
-        <i class="fa-solid fa-money-bill"></i>
-      </div>
-      <span class="text-2xl">150€</span>
-    </div>
+    <!-- Totals Column -->
+    <div class="col-span-2 grid grid-cols-3 gap-4 h-fit">
 
-    <div class="p-4 rounded bg-secondary-200 border-2 border-green-500 font-bold flex flex-col gap-2">
-      <div class="flex gap-4">
-        <p>Income Montly</p>
-        <i class="fa-solid fa-arrow-down"></i>
+      <!-- Current Balance -->
+      <div class="p-4 rounded bg-secondary-200 border-2 border-primary-100 font-bold flex flex-col gap-2">
+        <div class="flex gap-4">
+          <p>Current balance</p>
+          <i class="fa-solid fa-money-bill"></i>
+        </div>
+        <span class="text-2xl">150€</span>
       </div>
-      <span class="text-2xl">300€</span>
-    </div>
 
-    <div class="p-4 rounded bg-secondary-200 border-2 border-primary-200 font-bold flex flex-col gap-2">
-      <div class="flex gap-4">
-        <p>Expense Montly</p>
-        <i class="fa-solid fa-arrow-up"></i>
+      <!-- Income Montly -->
+      <div class="p-4 rounded bg-secondary-200 border-2 border-green-500 font-bold flex flex-col gap-2">
+        <div class="flex gap-4">
+          <p>Income Montly</p>
+          <i class="fa-solid fa-arrow-down"></i>
+        </div>
+        <span class="text-2xl">300€</span>
       </div>
-      <span class="text-2xl">100€</span>
+
+      <!-- Expense Montly -->
+      <div class="p-4 rounded bg-secondary-200 border-2 border-primary-200 font-bold flex flex-col gap-2">
+        <div class="flex gap-4">
+          <p>Expense Montly</p>
+          <i class="fa-solid fa-arrow-up"></i>
+        </div>
+        <span class="text-2xl">100€</span>
+      </div>
+
+      <!-- Graph -->
+
     </div>
 
     <!-- Historic Column -->
-    <div class="xl:row-span-7 text-white font-bold bg-gradient-to-br from-primary-200 to-primary-300 rounded">
+    <div class="text-white font-bold bg-gradient-to-br from-primary-200 to-primary-300 rounded">
 
       <!-- Title -->
       <div class="flex gap-4 items-center justify-center border-white border-b-2 py-8">
