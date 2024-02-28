@@ -20,7 +20,7 @@
 
     <x-sidebar/>
     
-    <div class="row-span-1 xl:pl-64 xl:pt-28 xl:pb-0 pb-20 bg-secondary-100">
+    <div class="row-span-1 xl:pl-64 xl:pt-28 xl:pb-0 pb-20 xl:pr-4 bg-secondary-100">
 
       @yield('content')
 
