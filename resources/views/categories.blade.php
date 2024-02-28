@@ -3,10 +3,10 @@
 @php $current = 'categories'; @endphp
 @section('content')
 
-  <main class="grid grid-cols-4">
+  <main class="grid xl:grid-cols-4">
 
     <!-- Select type -->
-    <div class="col-span-4">
+    <div class="xl:col-span-4">
       <span>Income</span>
       <span>Expense</span>
     </div>
