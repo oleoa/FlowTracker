@@ -30,7 +30,7 @@ class Auth extends Controller
     if (AuthSupport::attempt($validated)) {
       $request->session()->regenerate();
 
-      return redirect()->route('home')->with('success', 'User logged in successfully!');
+      return redirect()->route('dashboard')->with('success', 'User logged in successfully!');
     }
 
     return back()->withErrors([
@@ -52,7 +52,7 @@ class Auth extends Controller
 
     AuthSupport::login($user);
 
-    return redirect()->route('home')->with('success', 'User created successfully!');
+    return redirect()->route('dashboard')->with('success', 'User created successfully!');
   }
 
   public function signout(Request $request)
