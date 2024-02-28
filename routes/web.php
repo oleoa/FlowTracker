@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Auth;
+use App\Http\Controllers\Home;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-  return view('home');
+Route::get('/', [Home::class, 'index'])->name('home')->middleware('auth');
+
+Route::get('/login', [Auth::class, 'login'])->name('login');
+Route::get('/register', [Auth::class, 'register'])->name('register');
+
+Route::name('sign.')->group(function () {
+  Route::post('/login', [Auth::class, 'signin'])->name('in');
+  Route::post('/register', [Auth::class, 'signup'])->name('up');
+  Route::get('/logout', [Auth::class, 'logout'])->name('out');
 });
