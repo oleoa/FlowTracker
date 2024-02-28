@@ -6,6 +6,10 @@ use App\Http\Controllers\Home;
 use App\Http\Controllers\Auth;
 use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Expenses;
+use App\Http\Controllers\Incomes;
+use App\Http\Controllers\Categories;
+use App\Http\Controllers\Settings;
+use App\Http\Controllers\Goals;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,10 +48,14 @@ Route::middleware('auth')->group(function () {
 
   Route::get('/', [Dashboard::class, 'index'])->name('dashboard');
 
-  Route::get('/incomes', [Dashboard::class, 'incomes'])->name('incomes');
-
-  Route::get('/expenses', [Expenses::class, 'expenses'])->name('expenses');
-
+  Route::get('/incomes', [Incomes::class, 'index'])->name('incomes');
+  
+  Route::get('/expenses', [Expenses::class, 'index'])->name('expenses');
+  
   Route::post('/expenses/create', [Expenses::class, 'add'])->name('expense.add');
+  
+  Route::get('/categories', [Categories::class, 'index'])->name('categories');
+
+  Route::get('/goals', [Goals::class, 'index'])->name('goals');
 
 });

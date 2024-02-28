@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class Expenses extends Controller
 {
-  public function expenses()
+  public function index()
   {
     return view('expenses');
   }

@@ -67,3 +67,4 @@ Cada user pode criar meta de quanto eles querem gastar mensalmente em geral, ou 
 ### Incomes
 ### Settings
 ### Categories
+### Goals
