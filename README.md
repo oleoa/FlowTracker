@@ -54,7 +54,16 @@ Cada user pode criar meta de quanto eles querem gastar mensalmente em geral, ou 
 - O saldo Atual
 - Últimos movimentos
 - Quanto se recebe e quanto se gasta mensalmente
+- Gráfico da quantia de dinheiro por dia nos últimos 30 dias e mais
+
+### Expenses
+- Total de quanto se gastou até agora (soma dos outros 3)
+- Total de quanto se gasta mensalmente com frequência sem fim
+- Total de quanto se gasta mensalmente com frequência com fim
+- Total de quanto se gasta nesse mês
+- Lista de despesas detalhadas
+- Adicionar despesa
 
 ### Incomes
-### Expenses
 ### Settings
+### Categories

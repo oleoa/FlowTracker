@@ -6,7 +6,7 @@
   <main class="grid xl:grid-cols-4 xl:grid-rows-7 gap-4 xl:p-0 p-4">
 
     <!-- Amounts Row -->
-    <div class="p-4 rounded bg-secondary-200 border-2 border-primary-100 font-bold">
+    <div class="p-4 rounded bg-secondary-200 border-2 border-primary-100 font-bold flex flex-col gap-2">
       <div class="flex gap-4">
         <p>Current balance</p>
         <i class="fa-solid fa-money-bill"></i>
@@ -14,7 +14,7 @@
       <span class="text-2xl">150€</span>
     </div>
 
-    <div class="p-4 rounded bg-secondary-200 border-2 border-green-500 font-bold">
+    <div class="p-4 rounded bg-secondary-200 border-2 border-green-500 font-bold flex flex-col gap-2">
       <div class="flex gap-4">
         <p>Income Montly</p>
         <i class="fa-solid fa-arrow-down"></i>
@@ -22,7 +22,7 @@
       <span class="text-2xl">300€</span>
     </div>
 
-    <div class="p-4 rounded bg-secondary-200 border-2 border-primary-200 font-bold">
+    <div class="p-4 rounded bg-secondary-200 border-2 border-primary-200 font-bold flex flex-col gap-2">
       <div class="flex gap-4">
         <p>Expense Montly</p>
         <i class="fa-solid fa-arrow-up"></i>
@@ -67,13 +67,6 @@
         </div>
 
       </div>
-
-    </div>
-
-    <!-- Graphic -->
-    <div class="xl:col-span-3 xl:row-span-6 bg-black rounded hidden xl:flex items-center justify-center">
-
-      <i class="fa-solid fa-signal" style="font-size: 35rem;"></i>
 
     </div>
 

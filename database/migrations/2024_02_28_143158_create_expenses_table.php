@@ -19,8 +19,8 @@ return new class extends Migration
       $table->unsignedBigInteger('category');
       $table->foreign('category')->references('id')->on('categories')->onDelete('cascade');
       $table->integer('amount');
+      $table->date('date');
       $table->boolean('recurring')->default(false);
-      $table->date('start_date')->nullable();
       $table->date('end_date')->nullable();
       $table->enum('frequency', ['day', 'week', 'month', 'quarter', 'halfyear', 'year', 'biennial'])->default('month')->nullable();
       $table->timestamps();

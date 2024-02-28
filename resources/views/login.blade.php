@@ -14,7 +14,7 @@
 
       <!-- Email -->
       <span class="w-full relative">
-        <input type="email" name="email" placeholder="Email" class="bg-white/0 border-2 border-white placeholder:text-white text-white">
+        <input type="email" name="email" placeholder="Email" class="bg-white/0 border-2 border-white placeholder:text-white text-white w-full">
         <div class="absolute right-0 top-0 h-full px-4 flex items-center">
           <i class="fa-solid fa-envelope"></i>
         </div>
@@ -22,7 +22,7 @@
 
       <!-- Password -->
       <span class="w-full relative">
-        <input type="password" name="password" placeholder="Password" class="bg-white/0 border-2 border-white placeholder:text-white text-white">
+        <input type="password" name="password" placeholder="Password" class="bg-white/0 border-2 border-white placeholder:text-white text-white w-full">
         <div class="absolute right-0 top-0 h-full px-4 flex items-center">
           <i class="fa-solid fa-key"></i>
         </div>
@@ -50,7 +50,7 @@
       </div>
 
       <!-- Submit -->
-      <input type="submit" value="Login" class="bg-white text-black font-bold hover:bg-gradient-to-br hover:from-primary-200 hover:to-primary-300 hover:text-white">
+      <input type="submit" value="Login" class="bg-white text-black font-bold hover:bg-gradient-to-br hover:from-primary-200 hover:to-primary-300 hover:text-white w-full">
 
       <!-- Errors -->
       <x-errors/>

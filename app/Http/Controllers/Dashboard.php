@@ -16,9 +16,4 @@ class Dashboard extends Controller
   {
     return view('incomes');
   }
-
-  public function expenses()
-  {
-    return view('expenses');
-  }
 }

@@ -29,11 +29,17 @@
   }
 
   input {
-    @apply rounded-md px-4 py-2 w-full focus:outline-none;
+    @apply rounded-md px-4 py-2 focus:outline-none;
+    color-scheme: dark;
   }
 
   input[type="submit"] {
-    @apply rounded-md px-4 py-2 w-full cursor-pointer;
+    @apply rounded-md px-4 py-2 cursor-pointer;
+  }
+
+  select {
+    @apply rounded-md px-4 py-2 focus:outline-none;
+  
   }
 
   a {
@@ -41,6 +47,6 @@
   }
 
   i {
-    @apply text-white text-2xl;
+    @apply text-white xl:text-2xl text-lg;
   }
 }
