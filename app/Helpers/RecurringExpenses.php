@@ -14,23 +14,35 @@ class RecurringExpenses extends Recurring
     if(!$expense->recurring) return;
     
     $started = Carbon::parse($expense->date);
-    $today = date('Y-m-d');
+    $today = Carbon::now()->format('Y-m-d');
 
+    /**
+     * Here, it's gonna loop
+     * Every time it's gonna get the last added expense and add the frequency amount of time to it
+     * If it passes the current day, breaks the loop and ends it
+     * IF it doesn't, add a new (not primary) expense for the frequenced date
+     * And for last it saves the new last date for the next loop
+     */
     $enought = false;
-    $lastDate = $started;
+    $lastDateAdded = $started;
     while(!$enought)
     {
-      $expense->date = $lastDate->addMonth()->toDateString();
-      if($expense->date > $today){
+
+      $expense->date = $this->addTheCorrectDateForTheFrequency($lastDateAdded, $expense->frequency);
+
+      if($expense->date->toDateString() > $today){
         $enought = true;
         break;
       }
+
       $lastExpense = $this->addExpense($expense);
-      $lastDate = Carbon::parse($lastExpense->date);
+
+      $lastDateAdded = Carbon::parse($lastExpense->date);
+
     }
   }
 
-  private function checkLastRecurredByFrequency($date, $frequency)
+  private function addTheCorrectDateForTheFrequency($date, $frequency)
   {
     $newDate = $date;
     if($frequency === 'day') return $newDate->addDay();
@@ -42,33 +54,8 @@ class RecurringExpenses extends Recurring
     if($frequency === 'biennium') return $newDate->addYears(2);
   }
 
-  private function addRecurringExpense($lastExpense)
-  {
-    $newDate = Carbon::parse($lastExpense['date']);
-    if($lastExpense['frequency'] === 'day') $newDate->addDay();
-    if($lastExpense['frequency'] === 'week') $newDate->addWeek();
-    if($lastExpense['frequency'] === 'month') $newDate->addMonth();
-    if($lastExpense['frequency'] === 'year') $newDate->addYear();
-    if($lastExpense['frequency'] === 'quarter') $newDate->addMonths(3);
-    if($lastExpense['frequency'] === 'semester') $newDate->addMonths(6);
-    if($lastExpense['frequency'] === 'biennium') $newDate->addYears(2);
-
-    $expense = new Expense();
-    $expense->user = auth()->id();
-    $expense->name = $lastExpense['name'];
-    $expense->category = $lastExpense['category'];
-    $expense->amount = $lastExpense['amount'];
-    $expense->date = $newDate->toDateString();
-    $expense->recurring = 0;
-    $expense->it_ends = $lastExpense['it_ends'] == 'true';
-    $expense->end_date = $lastExpense['end_date'];
-    $expense->frequency = $lastExpense['frequency'];
-    $expense->expense = $lastExpense['id'];
-    $expense->save();
-  }
-
   private function addExpense($expense)
-  {
+  {    
     $newExpense = new Expense();
     $newExpense->user = auth()->id();
     $newExpense->name = $expense['name'];
