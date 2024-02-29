@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Expense;
 use App\Helpers\ExpensesOrganizer;
+use App\Helpers\RecurringExpenses;
 
 class Expenses extends Controller
 {
@@ -49,7 +50,14 @@ class Expenses extends Controller
     $expense->it_ends = $validated['it_ends'] === 'true';
     $expense->end_date = $validated['end_date'];
     $expense->frequency = $validated['frequency'];
+    $expense->primary = true;
     $expense->save();
+
+    if($expense->recurring)
+    {
+      $recurringExpense = new RecurringExpenses();
+      $recurringExpense->addRecurredExpense($expense);
+    }
 
     return redirect()->route('expenses');
   }

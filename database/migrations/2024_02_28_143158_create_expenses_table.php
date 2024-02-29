@@ -24,6 +24,9 @@ return new class extends Migration
       $table->boolean('it_ends')->nullable()->default(false);
       $table->date('end_date')->nullable();
       $table->enum('frequency', ['day', 'week', 'month', 'quarter', 'halfyear', 'year', 'biennial'])->default('month')->nullable();
+      $table->boolean('primary')->default(true);
+      $table->unsignedBigInteger('expense')->nullable();
+      $table->foreign('expense')->references('id')->on('expenses')->onDelete('cascade');
       $table->timestamps();
     });
   }
