@@ -60,7 +60,12 @@
           <div class="bg-secondary-200 rounded w-full p-4 flex justify-between items-center">
 
             <div>
-              <h3>{{$expense['name']}}</h3>
+              <h3>
+                {{$expense['name']}}
+                @if($expense['primary'])
+                  <span class="text-base text-green-500">This Expense is a primary</span>
+                @endif
+              </h3>
               <h4>{{$expense['category']}}</h4>
             </div>
 
