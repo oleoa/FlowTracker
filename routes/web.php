@@ -44,22 +44,24 @@ Route::name('sign.')->group(function () {
 
 });
 
-Route::get('/', [Dashboard::class, 'index'])->name('dashboard');
+Route::middleware(['auth'])->group(function () {
 
-Route::get('/incomes', [Incomes::class, 'index'])->name('incomes');
+  Route::get('/', [Dashboard::class, 'index'])->name('dashboard');
 
-Route::get('/expenses/{range?}', [Expenses::class, 'index'])->name('expenses');
+  Route::get('/incomes', [Incomes::class, 'index'])->name('incomes');
 
-Route::post('/expenses', [Expenses::class, 'add'])->name('expense.add');
+  Route::get('/expenses/{range?}', [Expenses::class, 'index'])->name('expenses');
 
-Route::delete('/expenses', [Expenses::class, 'delete'])->name('expense.delete');
+  Route::post('/expenses', [Expenses::class, 'add'])->name('expense.add');
 
-Route::get('/categories/{type?}', [Categories::class, 'index'])->name('categories');
+  Route::delete('/expenses', [Expenses::class, 'delete'])->name('expense.delete');
 
-Route::post('/categories', [Categories::class, 'add'])->name('category.add');
+  Route::get('/categories/{type?}', [Categories::class, 'index'])->name('categories');
 
-Route::delete('/categories', [Categories::class, 'delete'])->name('category.delete');
+  Route::post('/categories', [Categories::class, 'add'])->name('category.add');
 
-Route::get('/goals', [Goals::class, 'index'])->name('goals');
+  Route::delete('/categories', [Categories::class, 'delete'])->name('category.delete');
+
+  Route::get('/goals', [Goals::class, 'index'])->name('goals');
 
 });
