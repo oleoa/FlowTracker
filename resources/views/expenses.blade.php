@@ -5,8 +5,24 @@
 
   <main class="grid grid-cols-3 xl:p-0 p-4 gap-4">
 
+    <!-- Range -->
+    <div class="xl:col-span-3 flex gap-4">
+      <a @class([
+        'bg-secondary-200 px-4 py-2 rounded hover:text-white hover-gradient-red-purple',
+        'gradient-blue-purple' => $range === 'day'
+      ]) href="{{route('expenses', ['range' => 'day'])}}">Day</a>
+      <a @class([
+        'bg-secondary-200 px-4 py-2 rounded hover:text-white hover-gradient-red-purple',
+        'gradient-blue-purple' => $range === 'month'
+      ]) href="{{route('expenses', ['range' => 'month'])}}">Month</a>
+      <a @class([
+        'bg-secondary-200 px-4 py-2 rounded hover:text-white hover-gradient-red-purple',
+        'gradient-blue-purple' => $range === 'year'
+      ]) href="{{route('expenses', ['range' => 'year'])}}">Year</a>
+    </div>
+
     <!-- List and Totals -->
-    <div class="grid xl:grid-cols-4 gap-4 col-span-2 h-fit">
+    <div class="grid xl:grid-cols-3 gap-4 col-span-2 h-fit">
 
       <!-- Total -->
       <div class="p-4 rounded bg-secondary-200 border-primary-200 border-2 font-bold flex flex-col gap-2">
@@ -14,25 +30,16 @@
           <p>Total</p>
           <i class="fa-solid fa-receipt"></i>
         </div>
-        <span class="text-2xl">150€</span>
+        <span class="text-2xl">{{$total['all']}}€</span>
       </div>
   
-      <!-- Total Endless Montly -->
+      <!-- Total Recurring -->
       <div class="p-4 rounded bg-secondary-200 border-primary-200 border-2 font-bold flex flex-col gap-2">
         <div class="flex gap-4 items-center">
-          <p>Total Endless Montly</p>
-          <i class="fa-solid fa-infinity"></i>
-        </div>
-        <span class="text-2xl">50€</span>
-      </div>
-  
-      <!-- Total Montly -->
-      <div class="p-4 rounded bg-secondary-200 border-primary-200 border-2 font-bold flex flex-col gap-2">
-        <div class="flex gap-4 items-center">
-          <p>Total Montly</p>
+          <p>Total Recurring</p>
           <i class="fa-solid fa-calendar-days"></i>
         </div>
-        <span class="text-2xl">75€</span>
+        <span class="text-2xl">{{$total['recurring']}}€</span>
       </div>
   
       <!-- Total Odd -->
@@ -41,11 +48,11 @@
           <p>Total Odd</p>
           <i class="fa-solid fa-receipt"></i>
         </div>
-        <span class="text-2xl">25€</span>
+        <span class="text-2xl">{{$total['odd']}}€</span>
       </div>
   
       <!-- Expenses List -->
-      <div class="col-span-4 flex flex-col h-min gap-4">
+      <div class="col-span-3 flex flex-col h-min gap-4">
   
         @foreach($expenses as $expense)
       

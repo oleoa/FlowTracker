@@ -6,12 +6,14 @@
   <main class="grid xl:grid-cols-4 gap-4 xl:p-0 p-4">
 
     <!-- Select type -->
-    <div class="xl:col-span-4 py-4 flex gap-4 [&>a]:underline">
+    <div class="xl:col-span-4 xl:flex gap-4 grid grid-cols-2">
       <a href="{{route('categories', ['type' => 'expense'])}}" @class([
-        'text-primary-100' => $type == 'expense'
+        'bg-secondary-200 px-4 py-2 rounded hover:text-white',
+        'gradient-red-purple' => $type == 'expense'
       ])>Expense</a>
       <a href="{{route('categories', ['type' => 'income'])}}" @class([
-        'text-primary-100' => $type == 'income'
+        'bg-secondary-200 px-4 py-2 rounded hover:text-white',
+        'gradient-red-purple' => $type == 'income'
       ])>Income</a>
     </div>
 
@@ -19,7 +21,7 @@
     <form action="{{route('category.add')}}" method="post" class="xl:col-span-4 flex gap-4">
       @csrf
       <input type="hidden" name="type" value="{{$type}}">
-      <input type="text" name="name" placeholder="Category name">
+      <input type="text" name="name" placeholder="Category name" class="bg-secondary-200">
       <button type="submit" class="submit">Add</button>
     </form>
 

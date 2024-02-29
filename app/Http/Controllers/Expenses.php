@@ -6,16 +6,23 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Expense;
+use App\Helpers\ExpensesOrganizer;
 
 class Expenses extends Controller
 {
-  public function index()
+  public function index($range = 'month')
   {
+    $data['range'] = $range;
     $data['categories'] = Category::where('type', 'expense')->get();
     $data['expenses'] = Expense::where('user', auth()->id())->get();
-    foreach ($data['expenses'] as $expense) {
-      $expense->category = Category::find($expense->category)->name;
-    }
+    $data['total']['all'] = 7;
+    $data['total']['recurring'] = 0;
+    $data['total']['odd'] = 7;
+    $expensesOrganizer = new ExpensesOrganizer();
+    $expensesOrganizer->setRange($data['range']);
+    $expensesOrganizer->setCategories($data['categories']);
+    $expensesOrganizer->setExpenses($data['expenses']);
+
     return view('expenses', $data);
   }
 
