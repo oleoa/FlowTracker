@@ -13,19 +13,16 @@ class Expenses extends Controller
 {
   public function index($range = 'month')
   {
-    $data['range'] = $range;
-    $data['categories'] = Category::where('type', 'expense')->get();
-    $data['expenses'] = Expense::where('user', auth()->id())->get();
+    $range = $range;
+    $categories = Category::where('type', 'expense')->get();
+    $expenses = Expense::where('user', auth()->id())->get();
 
     $expensesFormater = new ExpensesFormater();
-    $expensesFormater->setRange($data['range']);
-    $expensesFormater->setCategories($data['categories']);
-    $expensesFormater->setExpenses($data['expenses']);
+    $expensesFormater->setRange($range);
+    $expensesFormater->setCategories($categories);
+    $expensesFormater->setExpenses($expenses);
     $data = $expensesFormater->get();
-    $data['total']['all'] = 7;
-    $data['total']['recurring'] = 0;
-    $data['total']['odd'] = 7;
-
+    
     return view('expenses', $data);
   }
 

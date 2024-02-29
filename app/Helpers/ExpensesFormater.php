@@ -29,26 +29,57 @@ class ExpensesFormater
   public function get()
   {
     // Remove all that is not in the range
-    foreach($this->expenses as $key => $expense){
-      if($this->isNotInRange($expense)){
+    foreach($this->expenses as $key => $expense)
+      if($this->isNotInRange($expense))
         unset($this->expenses[$key]);
-      }
-    }
     
-    // sets the category names in each one
+    // Sets the category names in each one
+    $this->response['expenses'] = $this->nameCategoryInExpense($this->expenses, $this->categories);
+
     // Calculate the totals
+    $this->response['total'] = array();
+    $this->response['total']['all'] = $this->calculateTotal($this->response['expenses']);
+    $this->response['total']['recurring'] = $this->calculateTotal($this->response['expenses'], true);
+    $this->response['total']['odd'] = $this->calculateTotal($this->response['expenses'], false);
 
     $this->response['range'] = $this->range;
     $this->response['categories'] = $this->categories;
-    $this->response['expenses'] = $this->nameCategoryInExpense($this->expenses, $this->categories);
+
     return $this->response;
-    // return
+  }
+
+  private function calculateTotal($expenses, $recurring = null)
+  {
+    if($recurring === null)
+    {
+      $sum = 0;
+      foreach($expenses as $expense)
+        $sum += $expense->amount;
+      return $sum;
+    }
+    if($recurring === true)
+    {
+      $sum = 0;
+      foreach($expenses as $expense)
+        if($expense->recurring || !$expense->primary)
+          $sum += $expense->amount;
+      return $sum;
+    }
+    if($recurring === false)
+    {
+      $sum = 0;
+      foreach($expenses as $expense)
+        if(!$expense->recurring && $expense->primary)
+          $sum += $expense->amount;
+      return $sum;
+    }
   }
 
   private function isNotInRange($expense)
   {
     $now = Carbon::now();
     $date = Carbon::parse($expense->date);
+    if($this->range === 'all') return false;
     if($this->range === 'day') return !$date->isToday();
     if($this->range === 'week') return !$date->isCurrentWeek();
     if($this->range === 'month') return !$date->isCurrentMonth();
