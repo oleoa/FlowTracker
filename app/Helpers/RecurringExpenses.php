@@ -35,6 +35,13 @@ class RecurringExpenses extends Recurring
         break;
       }
 
+      if($expense->it_ends){
+        if($expense->date->toDateString() > $expense->end_date){
+          $enought = true;
+          break;
+        }
+      }
+
       $lastExpense = $this->addExpense($expense);
 
       $lastDateAdded = Carbon::parse($lastExpense->date);

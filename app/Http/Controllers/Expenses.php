@@ -46,8 +46,8 @@ class Expenses extends Controller
     $expense->category = $validated['category'];
     $expense->amount = $validated['amount'];
     $expense->date = $validated['date'];
-    $expense->recurring = $validated['recurring'] === 'true';
-    $expense->it_ends = $validated['it_ends'] === 'true';
+    $expense->recurring = $validated['recurring'] == 'true';
+    $expense->it_ends = $validated['it_ends'] == 'true';
     $expense->end_date = $validated['end_date'];
     $expense->frequency = $validated['frequency'];
     $expense->primary = true;
