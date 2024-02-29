@@ -3,15 +3,42 @@
 @php $current = 'categories'; @endphp
 @section('content')
 
-  <main class="grid xl:grid-cols-4">
+  <main class="grid xl:grid-cols-4 gap-4">
 
     <!-- Select type -->
-    <div class="xl:col-span-4">
-      <span>Income</span>
-      <span>Expense</span>
+    <div class="xl:col-span-4 py-4 flex gap-4 [&>a]:underline">
+      <a href="{{route('categories', ['type' => 'income'])}}" @class([
+        'text-primary-100' => $type == 'income'
+      ])>Income</a>
+      <a href="{{route('categories', ['type' => 'expense'])}}" @class([
+        'text-primary-100' => $type == 'expense'
+      ])>Expense</a>
     </div>
-    
-    <h1>Categories</h1>
+
+    <!-- Add category -->
+    <div class="xl:col-span-4">
+      <form action="{{route('category.add')}}" method="post">
+        @csrf
+        <input type="hidden" name="type" value="{{$type}}">
+        <input type="text" name="name" placeholder="Category name">
+        <button type="submit">Add</button>
+      </form>
+    </div>
+
+    <!-- Categories -->
+    @foreach($categories as $category)
+      <div class="p-4 bg-secondary-200 rounded-md flex items-center justify-between">
+
+        <h1>{{$category['name']}}</h1>
+
+        <form action="{{route('category.delete')}}" method="post">
+          @csrf @method('delete')
+          <input type="hidden" name="id" value="{{$category['id']}}">
+          <button type="submit"><i class="fa-solid fa-trash text-primary-200"></i></button>
+        </form>
+
+      </div>
+    @endforeach
 
   </main>
 

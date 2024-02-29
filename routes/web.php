@@ -52,9 +52,13 @@ Route::middleware('auth')->group(function () {
   
   Route::get('/expenses', [Expenses::class, 'index'])->name('expenses');
   
-  Route::post('/expenses/create', [Expenses::class, 'add'])->name('expense.add');
+  Route::post('/expenses', [Expenses::class, 'add'])->name('expense.add');
   
   Route::get('/categories', [Categories::class, 'index'])->name('categories');
+  
+  Route::post('/categories', [Categories::class, 'add'])->name('category.add');
+  
+  Route::delete('/categories', [Categories::class, 'delete'])->name('category.delete');
 
   Route::get('/goals', [Goals::class, 'index'])->name('goals');
 
