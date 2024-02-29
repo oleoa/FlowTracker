@@ -21,6 +21,7 @@ return new class extends Migration
       $table->integer('amount');
       $table->date('date');
       $table->boolean('recurring')->default(false);
+      $table->boolean('it_ends')->nullable()->default(false);
       $table->date('end_date')->nullable();
       $table->enum('frequency', ['day', 'week', 'month', 'quarter', 'halfyear', 'year', 'biennial'])->default('month')->nullable();
       $table->timestamps();

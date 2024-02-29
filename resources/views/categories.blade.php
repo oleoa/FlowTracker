@@ -3,7 +3,7 @@
 @php $current = 'categories'; @endphp
 @section('content')
 
-  <main class="grid xl:grid-cols-4 gap-4">
+  <main class="grid xl:grid-cols-4 gap-4 xl:p-0 p-4">
 
     <!-- Select type -->
     <div class="xl:col-span-4 py-4 flex gap-4 [&>a]:underline">
@@ -25,9 +25,10 @@
 
     <!-- Categories -->
     @foreach($categories as $category)
+    
       <div class="p-4 bg-secondary-200 rounded-md flex items-center justify-between">
 
-        <h1>{{$category['name']}}</h1>
+        <h3>{{$category['name']}}</h3>
 
         <form action="{{route('category.delete')}}" method="post">
           @csrf @method('delete')
@@ -36,6 +37,7 @@
         </form>
 
       </div>
+
     @endforeach
 
   </main>
