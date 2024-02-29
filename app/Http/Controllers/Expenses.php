@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Expense;
-use App\Helpers\ExpensesOrganizer;
+use App\Helpers\ExpensesFormater;
 use App\Helpers\RecurringExpenses;
 
 class Expenses extends Controller
@@ -16,13 +16,15 @@ class Expenses extends Controller
     $data['range'] = $range;
     $data['categories'] = Category::where('type', 'expense')->get();
     $data['expenses'] = Expense::where('user', auth()->id())->get();
+
+    $expensesFormater = new ExpensesFormater();
+    $expensesFormater->setRange($data['range']);
+    $expensesFormater->setCategories($data['categories']);
+    $expensesFormater->setExpenses($data['expenses']);
+    $data = $expensesFormater->get();
     $data['total']['all'] = 7;
     $data['total']['recurring'] = 0;
     $data['total']['odd'] = 7;
-    $expensesOrganizer = new ExpensesOrganizer();
-    $expensesOrganizer->setRange($data['range']);
-    $expensesOrganizer->setCategories($data['categories']);
-    $expensesOrganizer->setExpenses($data['expenses']);
 
     return view('expenses', $data);
   }
