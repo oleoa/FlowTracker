@@ -58,21 +58,27 @@
       
           <!-- Expense -->
           <div class="bg-secondary-200 rounded w-full p-4 flex justify-between items-center">
+
             <div>
               <h3>{{$expense['name']}}</h3>
               <h4>{{$expense['category']}}</h4>
             </div>
+
             <div class="flex items-center gap-4">
+
               <div class="flex flex-col">
                 <span class="text-base">{{$expense['date']}}</span>
                 <span class="text-2xl text-end">{{$expense['amount']}}€</span>
               </div>
+
               <form action="{{route('expense.delete')}}" method="post">
                 @csrf @method('DELETE')
                 <input type="hidden" name="id" value="{{$expense['id']}}">
                 <button type="submit" class="p-4"><i class="fa-solid fa-trash text-primary-200"></i></button>
               </form>
+
             </div>
+
           </div>
 
         @endforeach
