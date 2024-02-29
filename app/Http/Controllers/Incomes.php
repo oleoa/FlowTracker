@@ -7,8 +7,5 @@ use Illuminate\Http\Request;
 
 class Incomes extends Controller
 {
-  public function index()
-  {
-    return view('incomes');
-  }
+    //
 }

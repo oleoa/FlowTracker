@@ -46,7 +46,7 @@
         <i class="fa-solid fa-layer-group"></i>
       </a>
 
-      <a href="{{route('settings')}}" @class([
+      <a href="{{route('dashboard')}}" @class([
           'p-4 w-full flex justify-between items-center text-xl hover:text-white hover:bg-gradient-to-r hover:from-primary-200 hover:to-primary-300 rounded',
           'bg-gradient-to-r from-primary-100 to-primary-300' => $current == 'settings'
         ])>
