@@ -7,23 +7,21 @@
 
     <!-- Select type -->
     <div class="xl:col-span-4 py-4 flex gap-4 [&>a]:underline">
-      <a href="{{route('categories', ['type' => 'income'])}}" @class([
-        'text-primary-100' => $type == 'income'
-      ])>Income</a>
       <a href="{{route('categories', ['type' => 'expense'])}}" @class([
         'text-primary-100' => $type == 'expense'
       ])>Expense</a>
+      <a href="{{route('categories', ['type' => 'income'])}}" @class([
+        'text-primary-100' => $type == 'income'
+      ])>Income</a>
     </div>
 
     <!-- Add category -->
-    <div class="xl:col-span-4">
-      <form action="{{route('category.add')}}" method="post">
-        @csrf
-        <input type="hidden" name="type" value="{{$type}}">
-        <input type="text" name="name" placeholder="Category name">
-        <button type="submit">Add</button>
-      </form>
-    </div>
+    <form action="{{route('category.add')}}" method="post" class="xl:col-span-4 flex gap-4">
+      @csrf
+      <input type="hidden" name="type" value="{{$type}}">
+      <input type="text" name="name" placeholder="Category name">
+      <button type="submit" class="submit">Add</button>
+    </form>
 
     <!-- Categories -->
     @foreach($categories as $category)

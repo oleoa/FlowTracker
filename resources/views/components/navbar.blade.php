@@ -14,7 +14,7 @@
 
       <!-- User -->
       <span class="flex gap-4 items-center">
-        <p class="text-xl">Hi, Leo</p>
+        <p class="text-xl">Good morning, {{$name}}</p>
         <img src="{{asset('/img/users/leo.jpg')}}" alt="User Profile" class="rounded-full w-10">
       </span>
 

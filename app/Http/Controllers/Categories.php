@@ -9,13 +9,12 @@ use App\Models\Category;
 
 class Categories extends Controller
 {
-  public function index(Request $request)
+  public function index(Request $request, $type = 'expense')
   {
-    $type = $request->input('type')??'income';
-    if($type != 'income' && $type != 'expense')
-      $type = 'income';
+    if($type != 'expense' && $type != 'income')
+      return redirect()->route('categories', ['type' => 'expense']);
     $data['type'] = $type;
-
+    
     $data['categories'] = Category::where('type', $type)->get();
 
     return view('categories', $data);

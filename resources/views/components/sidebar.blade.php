@@ -38,7 +38,7 @@
         <i class="fa-regular fa-circle-check"></i>
       </a>
 
-      <a href="{{route('categories')}}" @class([
+      <a href="{{route('categories', 'expense')}}" @class([
           'p-4 w-full flex justify-between items-center text-xl hover:text-white hover:bg-gradient-to-r hover:from-primary-200 hover:to-primary-300 rounded',
           'bg-gradient-to-r from-primary-100 to-primary-300' => $current == 'categories'
         ])>

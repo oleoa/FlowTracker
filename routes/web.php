@@ -54,7 +54,7 @@ Route::middleware('auth')->group(function () {
   
   Route::post('/expenses', [Expenses::class, 'add'])->name('expense.add');
   
-  Route::get('/categories', [Categories::class, 'index'])->name('categories');
+  Route::get('/categories/{type?}', [Categories::class, 'index'])->name('categories');
   
   Route::post('/categories', [Categories::class, 'add'])->name('category.add');
   

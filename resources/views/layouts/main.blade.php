@@ -16,7 +16,7 @@
 
   <body class="h-full text-white">
 
-    <x-navbar :current="$current"/>
+    <x-navbar :current="$current" :name="auth()->user()->name"/>
 
     <x-sidebar :current="$current"/>
     
