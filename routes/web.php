@@ -64,4 +64,6 @@ Route::middleware('auth')->group(function () {
 
   Route::get('/goals', [Goals::class, 'index'])->name('goals');
 
+  Route::get('/settings', [Settings::class, 'index'])->name('settings');
+
 });
