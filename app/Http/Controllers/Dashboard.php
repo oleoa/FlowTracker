@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Expense;
+use App\Models\Income;
 
 class Dashboard extends Controller
 {
   public function index()
   {
-    return view('dashboard');
-  }
-
-  public function incomes()
-  {
-    return view('incomes');
+    $data = array();
+    $data['expenses'] = Expense::where('user', auth()->user()->id)->get();
+    $data['incomes'] = Income::where('user', auth()->user()->id)->get();
+    return view('dashboard', $data);
   }
 }
