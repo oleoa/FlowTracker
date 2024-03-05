@@ -19,10 +19,14 @@ return new class extends Migration
       $table->unsignedBigInteger('category');
       $table->foreign('category')->references('id')->on('categories')->onDelete('cascade');
       $table->integer('amount');
+      $table->date('date')->nullable();
       $table->boolean('recurring')->default(false);
-      $table->date('start_date')->nullable();
+      $table->boolean('it_ends')->nullable()->default(false);
       $table->date('end_date')->nullable();
       $table->enum('frequency', ['day', 'week', 'month', 'quarter', 'halfyear', 'year', 'biennial'])->default('month')->nullable();
+      $table->boolean('primary')->default(true);
+      $table->unsignedBigInteger('income')->nullable();
+      $table->foreign('income')->references('id')->on('incomes')->onDelete('cascade');
       $table->timestamps();
     });
   }
