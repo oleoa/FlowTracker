@@ -55,8 +55,16 @@
   @apply bg-gradient-to-r from-primary-100 to-primary-300;
 }
 
+.text-gradient-blue-purple {
+  @apply bg-gradient-to-r from-primary-100 to-primary-300 text-white/0 bg-clip-text;
+}
+
 .gradient-red-purple {
   @apply text-white bg-gradient-to-r from-primary-200 to-primary-300;
+}
+
+.text-gradient-red-purple {
+  @apply text-white bg-gradient-to-r from-primary-200 to-primary-300 text-white/0 bg-clip-text;
 }
 
 .hover-gradient-red-purple {
