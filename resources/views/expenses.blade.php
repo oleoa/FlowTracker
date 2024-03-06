@@ -161,7 +161,7 @@
       </div>
 
       <!-- Submit -->
-      <input type="submit" class="bg-green-500 text-white rounded px-4 hover:bg-green-400" value="Add">
+      <input type="submit" class="bg-green-500 text-white rounded px-4 hover:bg-green-400 load" value="Add">
 
       <!-- Errors -->
       <x-errors/>

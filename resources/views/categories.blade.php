@@ -22,7 +22,7 @@
       @csrf
       <input type="hidden" name="type" value="{{$type}}">
       <input type="text" name="name" placeholder="Category name" class="bg-secondary-200">
-      <button type="submit" class="submit">Add</button>
+      <button type="submit" class="submit load">Add</button>
     </form>
 
     <!-- Categories -->
@@ -35,7 +35,7 @@
         <form action="{{route('category.delete')}}" method="post">
           @csrf @method('delete')
           <input type="hidden" name="id" value="{{$category['id']}}">
-          <button type="submit"><i class="fa-solid fa-trash text-primary-200"></i></button>
+          <button type="submit" class="load"><i class="fa-solid fa-trash text-primary-200"></i></button>
         </form>
 
       </div>

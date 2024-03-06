@@ -55,10 +55,10 @@ class Expenses extends Controller
     if($expense->recurring)
     {
       $recurringExpense = new Recurring();
-      $recurringExpense->addRecurreing($expense, 'expense');
+      $recurringExpense->addRecurreing($expense, Expense::class);
     }
 
-    return redirect()->route('expenses');
+    return redirect()->back();
   }
 
   public function delete(Request $request)
@@ -71,6 +71,6 @@ class Expenses extends Controller
     if($expense->user === auth()->id())
       $expense->delete();
 
-    return redirect()->route('expenses');
+    return redirect()->back();
   }
 }

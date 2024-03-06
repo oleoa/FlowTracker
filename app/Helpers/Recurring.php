@@ -3,6 +3,8 @@
 namespace App\Helpers;
 
 use Carbon\Carbon;
+use App\Models\Expense;
+use App\Models\Income;
 
 class Recurring
 {
@@ -61,7 +63,8 @@ class Recurring
 
   private function addTransaction($transaction, $type)
   {
-    if($type != 'expense' && $type != 'income') return;
+    $typeToString = explode('\\', $type)[2];
+    if($type != Expense::class && $type != Income::class) return;
     $newTransaction = new $type();
     $newTransaction->user = auth()->id();
     $newTransaction->name = $transaction['name'];
@@ -73,7 +76,7 @@ class Recurring
     $newTransaction->end_date = $transaction['end_date'];
     $newTransaction->frequency = $transaction['frequency'];
     $newTransaction->primary = 0;
-    $newTransaction->$type = $transaction['id'];
+    $newTransaction->$typeToString = $transaction['id'];
     $newTransaction->save();
     return $newTransaction;
   }
